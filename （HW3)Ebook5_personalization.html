@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>All you have to learn about E-book related to Green Computation. </title>
+    <meta charset="utf-8" content="This page is an a gerneral description of important knwoledge related to E-books.">
+    <!-- referenced to https://www.w3schools.com/css/css_website_layout.asp -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: #4ce600;
+            text-align: center;
+        }
+
+        .left {
+            width: 15%;
+            float: left;
+        }
+
+        .middle {
+            width: 70%;
+            float: left;
+        }
+
+        .right {
+            width: 15%;
+            float: left;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        a:hover {
+            background-color: #4ce600;
+        }
+    </style>
+    <script>
+        function resetCount() {
+            if (typeof(Storage) !== "undefined") {
+                localStorage.usercount = 0;
+            }
+        }
+
+        function showUser() {
+            if (typeof (Storage) !== "undefined") {
+                var usercount = localStorage.usercount;
+                document.getElementById("usercount").innerHTML = usercount;
+                if (usercount == 0) {
+                    document.getElementById("usertype").innerHTML = "Naive";
+                    document.getElementById('noviceCal').style.display='none';
+                    document.getElementById('naiveCal').style.display='block';
+                }
+                else if (usercount > 0) {
+                    document.getElementById("usertype").innerHTML = "Novice";
+                    document.getElementById('noviceCal').style.display='block';
+                    document.getElementById('naiveCal').style.display='none';
+                }
+            } else {
+                document.getElementById("usercount").innerHTML = -1;
+                document.getElementById("usertype").innerHTML =
+                    "Sorry, your browser does not support web storage...";
+            }
+        }
+
+        function loadUserCount() {
+            if (typeof(Storage) !== "undefined") {
+                if (isNaN(localStorage.usercount)) {
+                    localStorage.usercount = 0;
+                }
+            }
+            showUser();
+            if (typeof(Storage) !== "undefined") {
+                localStorage.usercount++;
+            }
+        }
+
+        function Calc() {
+            document.getElementById('step3').style.display='none';
+            var input1 = document.getElementById('input1').value;
+            var input2 = document.getElementById('input2').value;
+            var show = "Trees saved: " + input1 * input2;
+            document.getElementById('show').innerHTML = show;
+        }
+
+        function myInput() {
+            document.getElementById("hide").style.display='block';
+        }
+
+        function myInput1() {
+            document.getElementById('step1').style.display='none';
+            document.getElementById('step2').style.display='block';
+        }
+
+        function myInput2() {
+            document.getElementById('step2').style.display='none';
+            document.getElementById('step3').style.display='block';
+        }
+
+        function myHint1() {
+            document.getElementById("hint1").innerHTML = "< Enter the number of pages per book";
+        }
+
+        function myHint2() {
+            document.getElementById("hint2").innerHTML = "< Enter the number of books saved because of Ebook";
+        }
+
+        function myNoHint() {
+            document.getElementById("hint1").innerHTML = " ";
+            document.getElementById("hint2").innerHTML = " ";
+        }
+
+        function Wizard() {
+            document.getElementById('hide1').style.display='none';
+            document.getElementById('hide2').style.display='block';
+        }
+
+        function novice_Calc() {
+            var input1 = document.getElementById('novice_input1').value;
+            var input2 = document.getElementById('novice_input2').value;
+            var show = "Trees saved: " + input1 * input2;
+            document.getElementById('novice_show').innerHTML = show;
+        }
+
+        function novice_myHint1() {
+            document.getElementById("novice_hint1").innerHTML = "< Enter the number of pages per book";
+        }
+
+        function novice_myHint2() {
+            document.getElementById("novice_hint2").innerHTML = "< Enter the number of books saved because of Ebook";
+        }
+
+        function novice_myNoHint() {
+            document.getElementById("novice_hint1").innerHTML = " ";
+            document.getElementById("novice_hint2").innerHTML = " ";
+        }
+
+        function novice_Wizard() {
+            document.getElementById('novice_hide1').style.display='none';
+            document.getElementById('novice_hide2').style.display='block';
+        }
+    </script>
+</head>
+<body onload="loadUserCount()">
+
+USER COUNT <p id="usercount"></p>
+USER TYPE <p id="usertype"></p>
+
+<p><button onclick="resetCount()" type="button">Reset COUNT to 0</button></p>
+
+<hr/>
+<div class="header">
+    <br>
+    <h1>Green Computing</h1>
+    <br>
+</div>
+
+<div>
+    <div class="left">
+        <h2>Table of Contents</h2>
+        <h3>Paperless</h3>
+        <ul>
+            <li><a href="News%20Online.html">News Online</a></li>
+            <li><a href="Class%20Material%20Online.html">Class Material Online</a></li>
+            <li><a href="Paperless%20Office.html">Paperless Office</a></li>
+            <li><a href="Ebook%201.html">E-books</a></li>
+        </ul>
+        <h3>Reduce</h3>
+        <ul>
+            <li><a href="Just%20in%20Time%20Inventory.html">Just in Time Inventory</a></li>
+            <li><a href="Online%20Meetings.html">Online Meetings</a></li>
+            <li><a href="E-gifts.html">E-gifts</a></li>
+        </ul>
+        <h3>Reuse and Recycle</h3>
+        <ul>
+            <li><a href="Ewaste%20&%20Electronic%20Recycling.html">Ewaste & Electronic Recycling</a></li>
+            <li><a href="Cycle%20of%20purchasing.html">Cycle of purchasing</a></li>
+            <li><a href="Reusing%20Old%20computers.html">Reusing Old computers</a></li>
+        </ul>
+        <h3>Energy</h3>
+        <ul>
+            <li><a href="Wasted%20Energy.html">Wasted Energy</a></li>
+            <li><a href="Smart%20Buildings.html">Smart Buildings</a></li>
+            <li><a href="Computer%20inefficiencies.html">Computer inefficiencies</a></li>
+        </ul>
+    </div>
+
+    <div class="middle">
+        <p>Green Computing » Paperless » E-books</p>
+        <h1>E-books</h1>
+        <h2 style="color: red">-- Come and learn the exciting knowledge about E-book!</h2>
+        <div style="background-color: #4ce600">
+            <h2>For new users: How to use this website</h2>
+            <input type=radio name=myradio onclick=document.getElementById("instruction").style.display='block'>Learn now<br>
+            <input type=radio name=myradio onclick=document.getElementById("instruction").style.display='none'>I do not need instruction<br>
+            <div id = "instruction" style="display:none">
+                <p>You can scroll down any pages.<p>
+                <p>Use the site map on the left or navigation on the right to navigate.</p>
+                <p>Use the calculator below to quantify Ebook's power.</p>
+            </div>
+        </div>
+        </details>
+        <p style="font-size: 0.9rem;font-style: italic;"><img style="display: block;" src="https://live.staticflickr.com/6156/6134242485_664c2a0e7f_b.jpg" alt="RIP Michael Hart, inventor of the e-book, and friend."><a href="https://www.flickr.com/photos/16533652@N00/6134242485">"RIP Michael Hart, inventor of the e-book, and friend."</a><span> by <a href="https://www.flickr.com/photos/16533652@N00">Bistrosavage</a></span> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY 2.0</a><a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;"><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg?image_id=621f5250-62db-4d66-9639-392787a4f26c" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /></a></p>
+
+        <div id="naiveCal" style="display:none">
+        <h1 style="color: blue">(For Naive User) Let's calculate the number of trees saved from the use of eBooks:</h1>
+
+        <button type="button" onclick="myInput()">I have read the instructions</button>
+
+        <div id="hide" style="display:none">
+            <div id="hide1">
+                <p>
+                    <input id="input1" onkeydown="myInput1()" onmouseover="myHint1()">
+                    <b id="hint1"></b>
+                </p>
+                <p id="step1" style="color: blue">^ 1. Enter first number</p>
+
+                <p>
+                    <input id="input2" onkeydown="myInput2()" onmouseover="myHint2()">
+                    <b id="hint2"></b>
+                </p>
+                <p id="step2" style="display:none; color: blue">^ 2. Enter the second number</p>
+            </div>
+
+            <div id="hide2" style="display:none">
+                <input type=radio name=myradio onclick=document.getElementById("input1").value=1;document.getElementById("input2").value=1>Choose 1<br>
+                <input type=radio name=myradio onclick=document.getElementById("input1").value=10;document.getElementById("input2").value=10>Choose 10<br>
+                <input type=radio name=myradio onclick=document.getElementById("input1").value=100;document.getElementById("input2").value=100>Choose 100<br>
+            </div>
+
+            <p><button type="button" onclick="Calc()" onmouseover="myNoHint()"> Calculate </button><button type="button" onclick="Wizard()">Help me enter</button></p>
+            <p id="step3" style="display:none; color: blue">^ 3. Press Calculate</p>
+            <b id="show" style="color: blue"></b>
+        </div>
+        </div>
+
+        <div id="noviceCal" style="display:none">
+        <h1 style="color: blue">(For Novice User) Let's calculate the number of trees saved from the use of eBooks:</h1>
+
+        <div id="novice_hide1">
+            <p>
+                <input id="novice_input1" onmouseover="novice_myHint1()">
+                <b id="novice_hint1"></b>
+            </p>
+
+            <p>
+                <input id="novice_input2" onmouseover="novice_myHint2()">
+                <b id="novice_hint2"></b>
+            </p>
+        </div>
+
+        <div id="novice_hide2" style="display:none">
+            <input type=radio name=myradio onclick=document.getElementById("novice_input1").value=1;document.getElementById("novice_input2").value=1>Choose 1<br>
+            <input type=radio name=myradio onclick=document.getElementById("novice_input1").value=10;document.getElementById("novice_input2").value=10>Choose 10<br>
+            <input type=radio name=myradio onclick=document.getElementById("novice_input1").value=100;document.getElementById("novice_input2").value=100>Choose 100<br>
+        </div>
+
+        <p><button type="button" onclick="novice_Calc()" onmouseover="novice_myNoHint()"> Calculate </button><button type="button" onclick="novice_Wizard()">Help me enter</button></p>
+        <b id="novice_show" style="color: blue"></b>
+        </div>
+
+        <br>
+
+        <h2>Definition of E-books</h2>
+        <p>An electronic book, also known as an e-book or eBook, is a book publication made available in digital form, consisting of text, images, or both, readable on the flat-panel display of computers or other electronic devices. Although sometimes defined as "an electronic version of a printed book", some e-books exist without a printed equivalent. E-books can be read on dedicated e-reader devices, but also on any computer device that features a controllable viewing screen, including desktop computers, laptops, tablets and smartphones.</p>
+        <h2>Start of E-books</h2>
+        <p>In the 2000s, there was a trend of print and e-book sales moving to the Internet, where readers buy traditional paper books and e-books on websites using e-commerce systems. With print books, readers are increasingly browsing through images of the covers of books on publisher or bookstore websites and selecting and ordering titles online; the paper books are then delivered to the reader by mail or another delivery service. With e-books, users can browse through titles online, and then when they select and order titles, the e-book can be sent to them online or the user can download the e-book. By the early 2010s, e-books had begun to overtake hardcover by overall publication figures in the U.S.</p>
+        <h2>Development of E-books</h2>
+        <p>The main reasons for people buying e-books are possibly lower prices, increased comfort (as they can buy from home or on the go with mobile devices) and a larger selection of titles. With e-books, "electronic bookmarks make referencing easier, and e-book readers may allow the user to annotate pages." "Although fiction and non-fiction books come in e-book formats, technical material is especially suited for e-book delivery because it can be electronically searched" for keywords. In addition, for programming books, code examples can be copied. The amount of e-book reading is increasing in the U.S.; by 2014, 28% of adults had read an e-book, compared to 23% in 2013; and by 2014, 50% of American adults had an e-reader or a tablet, compared to 30% owning such devices in 2013.</p>
+        <p>  -- From Wikipedia (All text on Wikipedia is licensed under the Creative Commons Attribution) </p>
+        <p style="font-size: 0.9rem;font-style: italic;"><img style="display: block;" src="https://live.staticflickr.com/8071/8365755896_14a2f78de8_b.jpg" alt="New Free e-Books Available about 2 Famous NASA Space Telescopes"><a href="https://www.flickr.com/photos/50785054@N03/8365755896">"New Free e-Books Available about 2 Famous NASA Space Telescopes"</a><span> by <a href="https://www.flickr.com/photos/50785054@N03">James Webb Space Telescope</a></span> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY 2.0</a><a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;"><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg?image_id=02f44017-9618-4cdc-b688-1b60e71b470f" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /></a></p>
+        <h2>Frequent Questions about E-books</h2>
+        <p> (To be answered later) </p>
+        <h3>What are typical formats and devices for E-books?</h3>
+        <h3>Where should we purchase E-books?</h3>
+        <h3>The future of E-books</h3>
+
+    </div>
+</div>
+
+<div class="right">
+    <h2>Go To</h2>
+    <ul>
+        <li><a href="Paperless%20Office.html">Next Topic</a></li>
+        <li><a href="Just%20in%20Time%20Inventory.html">Previous Topic</a></li>
+    </ul>
+</div>
+
+
+</body>
+</html>

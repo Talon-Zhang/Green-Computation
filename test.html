@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function resetCount() {
+            if (typeof(Storage) !== "undefined") {
+                localStorage.usercount = 0;
+            }
+        }
+
+        function showUser() {
+            var usercount;
+            if (typeof (Storage) !== "undefined") {
+                usercount = localStorage.usercount;
+                document.getElementById("usercount").innerHTML = usercount;
+
+                if (usercount == 0)
+                    document.getElementById("usertype").innerHTML = "Naive";
+                if (usercount > 0)
+                    document.getElementById("usertype").innerHTML = "Novice";
+            } else {
+                document.getElementById("usercount").innerHTML = -1;
+                document.getElementById("usertype").innerHTML =
+                    "Sorry, your browser does not support web storage...";
+            }
+        }
+
+        function loadUserCount() {
+            if (typeof(Storage) !== "undefined") {
+                if (isNaN(localStorage.usercount)) {
+                    localStorage.usercount = 0;
+                }
+            }
+            showUser();
+            if (typeof(Storage) !== "undefined") {
+                localStorage.usercount++;
+            }
+        }
+
+    </script>
+
+</head>
+<body onload="loadUserCount()">
+
+USER COUNT <p id="usercount"></p>
+USER TYPE <p id="usertype"></p>
+
+<p><button onclick="resetCount()" type="button">Reset COUNT to 0</button></p>
+
+<hr/>
+</body>
+</html>
+
